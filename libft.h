@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rgwayne- <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: rgwayne- <rgwayne-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/26 16:19:13 by rgwayne-          #+#    #+#             */
-/*   Updated: 2018/12/16 14:34:58 by rgwayne-         ###   ########.fr       */
+/*   Updated: 2019/06/27 16:08:06 by rgwayne-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,8 +83,10 @@ t_list			*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem));
 int				ft_isprint(int c);
 void			*ft_memalloc(size_t size);
 char			*ft_strjoin(char const *s1, char const *s2);
+char			*ft_fstrjoin(char *s1, char *s2, int flag);
 char			*ft_itoa(int n);
 void			ft_freearr(char **res, int i);
 int				ft_count_words(const char *s, char c);
+char			*ft_fstrsub(char *s, unsigned int star, size_t len, int flag);
 
 #endif

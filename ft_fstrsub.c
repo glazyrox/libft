@@ -1,35 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*   ft_fstrsub.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rgwayne- <rgwayne-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/11/27 14:17:35 by rgwayne-          #+#    #+#             */
-/*   Updated: 2019/06/08 20:27:01 by rgwayne-         ###   ########.fr       */
+/*   Created: 2019/06/27 16:07:33 by rgwayne-          #+#    #+#             */
+/*   Updated: 2019/06/27 16:07:45 by rgwayne-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strdup(const char *s1)
+char	*ft_fstrsub(char *s, unsigned int star, size_t len, int flag)
 {
-	char	*new;
+	char	*str;
 	size_t	i;
-	size_t	len;
 
 	i = 0;
-	len = 0;
-	while (s1[len])
-		len++;
-	new = malloc(sizeof(char) * len + 1);
-	if (!new)
+	if (!s)
 		return (NULL);
-	while (s1[i])
+	str = (char *)malloc(sizeof(char) * (len + 1));
+	if (str == 0)
+		return (NULL);
+	while (i < len && s[star + i] != '\0')
 	{
-		new[i] = s1[i];
+		str[i] = s[star + i];
 		i++;
 	}
-	new[i] = '\0';
-	return (new);
+	str[i] = '\0';
+	flag == 1 ? ft_strdel(&s) : 0;
+	return (str);
 }

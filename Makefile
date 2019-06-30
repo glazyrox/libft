@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: rgwayne- <marvin@42.fr>                    +#+  +:+       +#+         #
+#    By: rgwayne- <rgwayne-@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/09/04 09:56:35 by rgwayne-          #+#    #+#              #
-#    Updated: 2018/12/16 14:37:47 by rgwayne-         ###   ########.fr        #
+#    Updated: 2019/06/27 16:08:16 by rgwayne-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -72,6 +72,8 @@ SRC = ft_atoi.c \
 	  ft_toupper.c \
 	  ft_freearr.c \
 	  ft_count_words.c \
+	  ft_fstrjoin.c \
+	  ft_fstrsub.c \
 
 HEAD = .libft.h
 
@@ -80,7 +82,7 @@ FLAGS = -Wall -Wextra -Werror
 all: $(NAME)
 
 $(NAME):
-	gcc $(FLAGS) -c $(SRC) -I $(HEAD)
+	gcc -g $(FLAGS) -c $(SRC) -I $(HEAD)
 	ar -rc $(NAME) *.o
 
 clean:
